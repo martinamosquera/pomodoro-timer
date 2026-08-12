@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="pomodoro-card">
+        <h1>Pomodoro</h1>
+        <!-- Pestañas para cambiar entre modo trabajo y descanso -->
+        <div class="modes">
+            <button id="btn-work" class="mode-btn active" onclick="switchMode('work')">Trabajo</button>
+            <button id="btn-break" class="mode-btn" onclick="switchMode('break')">Descanso</button>
+        </div>
+        <!-- El temporizador -->
+        <div class="timer" id="timer-display">25:00</div>
+        <!-- Botones de control -->
+        <div class="controls">
+            <button id="btn-start" onclick="toggleTimer()">Iniciar</button>
+            <button id="btn-reset" onclick="resetTimer()">Reiniciar</button>
+        </div>
+        <!-- Sección de configuración de tiempos -->
+        <div class="settings">
+            <h3>Configurar Tiempos (minutos)</h3>
+            <div class="input-group">
+                <label>Trabajo: <input type="number" id="input-work" value="25" min="1" max="60"></label>
+                <label>Descanso: <input type="number" id="input-break" value="5" min="1" max="30"></label>
+            </div>
+            <button onclick="saveSettings()">Guardar Tiempos</button>
+        </div>
+        <!-- Reproductor de Spotify -->
+        <div class="spotify-container">
+            <iframe style="border-radius:12px"
+                src="https://open.spotify.com/embed/playlist/58asVfpEqRe87tMr8rpEkR?utm_source=generator" width="100%"
+                height="152" frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+        </div>
+    </div> <!-- Cierre de .pomodoro-card -->
+    <script src="script.js"></script>
+</body>
+
+</html>
